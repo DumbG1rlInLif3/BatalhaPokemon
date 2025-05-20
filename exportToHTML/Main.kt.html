@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>Main.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #ed864a;}
+.s1 { color: #ebebeb;}
+.s2 { color: #54b33e;}
+.s3 { color: #ed864a; font-weight: bold;}
+</style>
+</head>
+<body bgcolor="#131314">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Main.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">fun </span><span class="s1">main() {</span>
+    <span class="s1">println(</span><span class="s2">&quot;👤 Jogador 1, digite seu nickname:&quot;</span><span class="s1">)</span>
+    <span class="s0">val </span><span class="s1">nick1 = readLine()?.trim().orEmpty()</span>
+    <span class="s1">criarJogador(nick1)</span>
+
+    <span class="s1">println(</span><span class="s2">&quot;👤 Jogador 2, digite seu nickname:&quot;</span><span class="s1">)</span>
+    <span class="s0">var </span><span class="s1">nick2: String</span>
+    <span class="s0">while </span><span class="s1">(</span><span class="s0">true</span><span class="s1">) {</span>
+        <span class="s1">nick2 = readLine()?.trim().orEmpty()</span>
+        <span class="s0">if </span><span class="s1">(nick2 == nick1) {</span>
+            <span class="s1">println(</span><span class="s2">&quot;❗Esse nickname já está em uso. Escolha outro:&quot;</span><span class="s1">)</span>
+        <span class="s1">} </span><span class="s0">else </span><span class="s1">{</span>
+            <span class="s0">break</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+    <span class="s1">criarJogador(nick2)</span>
+
+    <span class="s1">montarTime(nick1)</span>
+    <span class="s1">montarTime(nick2)</span>
+
+    <span class="s1">exibirTime(nick1)</span>
+    <span class="s1">exibirTime(nick2)</span>
+
+    <span class="s1">batalhar(nick1</span><span class="s3">, </span><span class="s1">nick2)</span>
+<span class="s1">}</span></pre>
+</body>
+</html>

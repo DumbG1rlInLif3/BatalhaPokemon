@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>exibirTime.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #ed864a;}
+.s1 { color: #ebebeb;}
+.s2 { color: #7ec3e6;}
+.s3 { color: #54b33e;}
+</style>
+</head>
+<body bgcolor="#131314">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+exibirTime.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">fun </span><span class="s1">exibirTime(nickname: String) {</span>
+    <span class="s2">//🧩 Essa função recebe o nickname de um jogador e mostra todos os</span>
+    <span class="s2">//Pokémons do time dele no console.</span>
+
+    <span class="s1">println(</span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">🔎 Time de </span><span class="s0">$</span><span class="s1">nickname</span><span class="s3">:&quot;</span><span class="s1">)</span>
+    <span class="s2">//✅ Imprime um cabeçalho dizendo de quem é o time. O \n quebra a linha para</span>
+    <span class="s2">//deixar visualmente mais organizado.</span>
+
+    <span class="s1">jogadores[nickname]?.forEach {</span>
+        <span class="s1">println(</span><span class="s3">&quot;- </span><span class="s0">${</span><span class="s1">it.nome</span><span class="s0">} </span><span class="s3">| Tipo: </span><span class="s0">${</span><span class="s1">it.tipo</span><span class="s0">} </span><span class="s3">| Poder: </span><span class="s0">${</span><span class="s1">it.poder</span><span class="s0">}</span><span class="s3">&quot;</span><span class="s1">)</span>
+<span class="s2">//✅ Acessa o time do jogador no map jogadores usando jogadores[nickname].</span>
+<span class="s2">//✅ Se o time existir (não for null), faz um forEach para imprimir cada Pokémon.</span>
+    <span class="s1">}</span>
+<span class="s1">}</span></pre>
+</body>
+</html>

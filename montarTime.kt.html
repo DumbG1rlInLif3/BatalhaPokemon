@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>montarTime.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #ed864a;}
+.s1 { color: #ebebeb;}
+.s2 { color: #7ec3e6;}
+.s3 { color: #54b33e;}
+.s4 { color: #33ccff; font-weight: bold;}
+.s5 { color: #ed864a; font-weight: bold;}
+</style>
+</head>
+<body bgcolor="#131314">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+montarTime.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">fun </span><span class="s1">montarTime(nickname: String) {</span>
+    <span class="s2">//📌 Essa função é chamada para cada jogador montar o time de 3 Pokémons a partir de</span>
+    <span class="s2">//uma lista chamada pokedex.</span>
+
+    <span class="s1">println(</span><span class="s3">&quot;</span><span class="s0">\n$</span><span class="s1">nickname</span><span class="s3">, monte seu time escolhendo 3 Pokémon pelo número:&quot;</span><span class="s1">)</span>
+    <span class="s1">exibirPokedex()</span>
+    <span class="s2">//✅ Mostra uma mensagem chamando o jogador e em seguida exibe a Pokédex para ele ver os Pokémons disponíveis.</span>
+    <span class="s2">//✅ A função exibirPokedex() deve imprimir os Pokémons com número/índice — é essencial que isso esteja correto.</span>
+
+    <span class="s0">val </span><span class="s1">escolhidos = mutableSetOf&lt;Int&gt;()</span>
+    <span class="s2">//✅ Cria um conjunto (set) para guardar os índices já escolhidos.</span>
+    <span class="s2">//✅ mutableSetOf garante que não haja repetição de escolha.</span>
+
+    <span class="s0">while </span><span class="s1">(escolhidos.size &lt; </span><span class="s4">3</span><span class="s1">) {</span>
+        <span class="s1">print(</span><span class="s3">&quot;Escolha o Pokémon </span><span class="s0">${</span><span class="s1">escolhidos.size + </span><span class="s4">1</span><span class="s0">} </span><span class="s3">(1 a </span><span class="s0">${</span><span class="s1">pokedex.size</span><span class="s0">}</span><span class="s3">): &quot;</span><span class="s1">)</span>
+        <span class="s0">val </span><span class="s1">escolha = readln().toIntOrNull()</span>
+        <span class="s2">//✅ O loop continua até o jogador escolher 3 Pokémons.</span>
+        <span class="s2">//✅ A entrada do usuário é convertida com toIntOrNull(), evitando erro se</span>
+        <span class="s2">//ele digitar algo que não seja número.</span>
+
+        <span class="s0">if </span><span class="s1">(escolha == </span><span class="s0">null </span><span class="s1">|| escolha </span><span class="s0">!in </span><span class="s4">1</span><span class="s1">..pokedex.size || escolha </span><span class="s0">in </span><span class="s1">escolhidos) {</span>
+            <span class="s1">println(</span><span class="s3">&quot;❌ Escolha inválida ou repetida.&quot;</span><span class="s1">)</span>
+            <span class="s2">//🧠 Essa linha faz 3 verificações:</span>
+            <span class="s2">//É um número válido (escolha != null)?</span>
+            <span class="s2">//Está dentro do intervalo da Pokédex?</span>
+            <span class="s2">//Já foi escolhido antes?</span>
+            <span class="s2">//Se qualquer condição falhar, mostra mensagem de erro.</span>
+
+        <span class="s1">} </span><span class="s0">else </span><span class="s1">{</span>
+            <span class="s0">val </span><span class="s1">pokemon = pokedex[escolha - </span><span class="s4">1</span><span class="s1">]</span>
+            <span class="s1">adicionarPokemon(nickname</span><span class="s5">, </span><span class="s1">pokemon.nome</span><span class="s5">, </span><span class="s1">pokemon.tipo</span><span class="s5">, </span><span class="s1">pokemon.poder)</span>
+            <span class="s1">escolhidos.add(escolha)</span>
+            <span class="s2">//✅ O índice da Pokédex começa em 0, por isso o escolha - 1.</span>
+            <span class="s2">//✅ O Pokémon é buscado da lista pokedex e enviado para a função adicionarPokemon,</span>
+            <span class="s2">//que insere ele no time do jogador no map jogadores.</span>
+            <span class="s2">//✅ Por fim, adiciona o número escolhido no set para evitar repetições.</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

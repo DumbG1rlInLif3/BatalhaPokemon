@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>Main.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #7ec3e6;}
+.s1 { color: #ebebeb;}
+.s2 { color: #ed864a;}
+.s3 { color: #54b33e;}
+.s4 { color: #ed864a; font-weight: bold;}
+</style>
+</head>
+<body bgcolor="#131314">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Main.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">//Define a função principal. É onde a execução do programa começa.</span>
+<span class="s2">fun </span><span class="s1">main() {</span>
+    <span class="s1">println(</span><span class="s3">&quot;👤 Jogador 1, digite seu nickname:&quot;</span><span class="s1">)</span>
+    <span class="s2">val </span><span class="s1">nick1 = readln().trim()</span>
+    <span class="s1">criarJogador(nick1)</span>
+<span class="s0">//✅ Mostra uma mensagem no console pedindo o nickname do Jogador 1.</span>
+<span class="s0">//✅ Lê a entrada do usuário (readln()), remove espaços antes/depois com trim() e salva em nick1.</span>
+<span class="s0">//✅ Chama a função criarJogador(nick1) para registrar o jogador num map</span>
+
+    <span class="s1">println(</span><span class="s3">&quot;👤 Jogador 2, digite seu nickname:&quot;</span><span class="s1">)</span>
+    <span class="s2">var </span><span class="s1">nick2: String</span>
+    <span class="s2">while </span><span class="s1">(</span><span class="s2">true</span><span class="s1">) {</span>
+        <span class="s1">nick2 = readln().trim()</span>
+        <span class="s2">if </span><span class="s1">(nick2 == nick1) {</span>
+            <span class="s1">println(</span><span class="s3">&quot;❗Esse nickname já está em uso. Escolha outro:&quot;</span><span class="s1">)</span>
+        <span class="s1">} </span><span class="s2">else </span><span class="s1">{</span>
+            <span class="s2">break</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+    <span class="s1">criarJogador(nick2)</span>
+    <span class="s0">//✅ Garante que o Jogador 2 tenha um nickname diferente do Jogador 1.</span>
+    <span class="s0">//✅ Se o nickname for repetido, mostra aviso e repete até que seja único.</span>
+    <span class="s0">//✅ Depois cria o segundo jogador com criarJogador(nick2).</span>
+
+    <span class="s1">montarTime(nick1)</span>
+    <span class="s1">montarTime(nick2)</span>
+    <span class="s0">//abre menus ou coleta dados para cada jogador montar seu time de Pokémon, chamando a</span>
+    <span class="s0">//função adicionarPokemon por dentro.</span>
+
+    <span class="s1">exibirTime(nick1)</span>
+    <span class="s1">exibirTime(nick2)</span>
+    <span class="s0">//✅ Mostra os times dos dois jogadores no console — talvez usando println() com base no</span>
+    <span class="s0">//map jogadores[nickname].</span>
+
+    <span class="s1">batalhar(nick1</span><span class="s4">, </span><span class="s1">nick2)</span>
+    <span class="s0">//✅ Chama a função principal da batalha entre os dois jogadores.</span>
+<span class="s1">}</span>
+
+<span class="s0">//OBSERVAÇÕES:</span>
+<span class="s0">//MutableList&lt;Pokemon&gt; = a lista de Pokémons que ele possui.</span>
+<span class="s0">//Esse map está funcionando como um banco de dados temporário na memória,</span>
+<span class="s0">//onde você associa o nickname ao time.</span></pre>
+</body>
+</html>

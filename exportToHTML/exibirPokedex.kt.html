@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>exibirPokedex.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #ed864a;}
+.s1 { color: #ebebeb;}
+.s2 { color: #54b33e;}
+.s3 { color: #ed864a; font-weight: bold;}
+.s4 { color: #33ccff; font-weight: bold;}
+</style>
+</head>
+<body bgcolor="#131314">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+exibirPokedex.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">fun </span><span class="s1">exibirPokedex() {</span>
+    <span class="s1">println(</span><span class="s2">&quot;</span><span class="s0">\n</span><span class="s2">📘 POKEDEX DISPONÍVEL:&quot;</span><span class="s1">)</span>
+    <span class="s1">pokedex.forEachIndexed { index</span><span class="s3">, </span><span class="s1">p -&gt;</span>
+        <span class="s1">println(</span><span class="s2">&quot;</span><span class="s0">${</span><span class="s1">index + </span><span class="s4">1</span><span class="s0">}</span><span class="s2">. </span><span class="s0">${</span><span class="s1">p.nome</span><span class="s0">} </span><span class="s2">| Tipo: </span><span class="s0">${</span><span class="s1">p.tipo</span><span class="s0">} </span><span class="s2">| Poder: </span><span class="s0">${</span><span class="s1">p.poder</span><span class="s0">}</span><span class="s2">&quot;</span><span class="s1">)</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

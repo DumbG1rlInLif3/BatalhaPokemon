@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>batalhar.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #ed864a;}
+.s1 { color: #ebebeb;}
+.s2 { color: #ed864a; font-weight: bold;}
+.s3 { color: #54b33e;}
+</style>
+</head>
+<body bgcolor="#131314">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+batalhar.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">fun </span><span class="s1">batalhar(nick1: String</span><span class="s2">, </span><span class="s1">nick2: String) {</span>
+    <span class="s0">val </span><span class="s1">time1 = jogadores[nick1] ?: </span><span class="s0">return</span>
+    <span class="s0">val </span><span class="s1">time2 = jogadores[nick2] ?: </span><span class="s0">return</span>
+
+    <span class="s0">val </span><span class="s1">poder1 = time1.sumOf { it.poder }</span>
+    <span class="s0">val </span><span class="s1">poder2 = time2.sumOf { it.poder }</span>
+
+    <span class="s1">println(</span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">⚔ BATALHA ENTRE </span><span class="s0">$</span><span class="s1">nick1 </span><span class="s3">e </span><span class="s0">$</span><span class="s1">nick2</span><span class="s3">!&quot;</span><span class="s1">)</span>
+    <span class="s1">println(</span><span class="s3">&quot;</span><span class="s0">$</span><span class="s1">nick1</span><span class="s3">: </span><span class="s0">$</span><span class="s1">poder1 </span><span class="s3">de poder total&quot;</span><span class="s1">)</span>
+    <span class="s1">println(</span><span class="s3">&quot;</span><span class="s0">$</span><span class="s1">nick2</span><span class="s3">: </span><span class="s0">$</span><span class="s1">poder2 </span><span class="s3">de poder total&quot;</span><span class="s1">)</span>
+
+    <span class="s0">when </span><span class="s1">{</span>
+        <span class="s1">poder1 &gt; poder2 -&gt; println(</span><span class="s3">&quot;🏆 </span><span class="s0">$</span><span class="s1">nick1 </span><span class="s3">venceu a batalha!&quot;</span><span class="s1">)</span>
+        <span class="s1">poder2 &gt; poder1 -&gt; println(</span><span class="s3">&quot;🏆 </span><span class="s0">$</span><span class="s1">nick2 </span><span class="s3">venceu a batalha!&quot;</span><span class="s1">)</span>
+        <span class="s0">else </span><span class="s1">-&gt; println(</span><span class="s3">&quot;🤝 Empate!&quot;</span><span class="s1">)</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

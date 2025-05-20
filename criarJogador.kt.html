@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>criarJogador.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #7ec3e6;}
+.s1 { color: #ebebeb;}
+.s2 { color: #ed864a;}
+.s3 { color: #ed864a; font-weight: bold;}
+</style>
+</head>
+<body bgcolor="#131314">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+criarJogador.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">//Cria um novo jogador com o nickname recebido.</span>
+<span class="s0">//Adiciona no map jogadores uma entrada onde:</span>
+<span class="s0">//A chave é o nickname (String);</span>
+<span class="s0">//O valor é uma lista mutável vazia que vai guardar os Pokémons do jogador.</span>
+<span class="s2">fun </span><span class="s1">criarJogador(nickname: String) {</span>
+    <span class="s1">jogadores[nickname] = mutableListOf()</span>
+<span class="s1">}</span>
+
+<span class="s0">//Função para adicionar um Pokémon ao time do jogador</span>
+<span class="s0">//Cria um novo objeto Pokémon com as características recebidas.</span>
+<span class="s0">//Acessa o time do jogador através de jogadores[nickname] e adiciona o Pokémon na lista.</span>
+<span class="s0">//O ?.add(pokemon) usa o operador safe call, ou seja:</span>
+<span class="s0">//Só tenta adicionar se jogadores[nickname] não for null.</span>
+<span class="s2">fun </span><span class="s1">adicionarPokemon(nickname: String</span><span class="s3">, </span><span class="s1">nome: String</span><span class="s3">, </span><span class="s1">tipo: String</span><span class="s3">, </span><span class="s1">poder: Int) {</span>
+    <span class="s2">val </span><span class="s1">pokemon = Pokemon(nome</span><span class="s3">, </span><span class="s1">tipo</span><span class="s3">, </span><span class="s1">poder)</span>
+    <span class="s1">jogadores[nickname]?.add(pokemon)</span>
+<span class="s1">}</span>
+
+<span class="s0">//OBSERVAÇÕES:</span>
+<span class="s0">//Esse mutableMapOf&lt;String, MutableList&lt;Pokemon&gt;&gt;() funciona como a estrutura central do jogo. Ele guarda todos</span>
+<span class="s0">//os jogadores e seus respectivos times</span>
+</pre>
+</body>
+</html>

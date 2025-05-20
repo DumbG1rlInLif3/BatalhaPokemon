@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>montarTime.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #ed864a;}
+.s1 { color: #ebebeb;}
+.s2 { color: #54b33e;}
+.s3 { color: #33ccff; font-weight: bold;}
+.s4 { color: #ed864a; font-weight: bold;}
+</style>
+</head>
+<body bgcolor="#131314">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+montarTime.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">fun </span><span class="s1">montarTime(nickname: String) {</span>
+    <span class="s1">println(</span><span class="s2">&quot;</span><span class="s0">\n$</span><span class="s1">nickname</span><span class="s2">, monte seu time escolhendo 3 Pokémon pelo número:&quot;</span><span class="s1">)</span>
+    <span class="s1">exibirPokedex()</span>
+
+    <span class="s0">val </span><span class="s1">escolhidos = mutableSetOf&lt;Int&gt;()</span>
+    <span class="s0">while </span><span class="s1">(escolhidos.size &lt; </span><span class="s3">3</span><span class="s1">) {</span>
+        <span class="s1">print(</span><span class="s2">&quot;Escolha o Pokémon </span><span class="s0">${</span><span class="s1">escolhidos.size + </span><span class="s3">1</span><span class="s0">} </span><span class="s2">(1 a </span><span class="s0">${</span><span class="s1">pokedex.size</span><span class="s0">}</span><span class="s2">): &quot;</span><span class="s1">)</span>
+        <span class="s0">val </span><span class="s1">escolha = readLine()?.toIntOrNull()</span>
+        <span class="s0">if </span><span class="s1">(escolha == </span><span class="s0">null </span><span class="s1">|| escolha </span><span class="s0">!in </span><span class="s3">1</span><span class="s1">..pokedex.size || escolha </span><span class="s0">in </span><span class="s1">escolhidos) {</span>
+            <span class="s1">println(</span><span class="s2">&quot;❌ Escolha inválida ou repetida.&quot;</span><span class="s1">)</span>
+        <span class="s1">} </span><span class="s0">else </span><span class="s1">{</span>
+            <span class="s0">val </span><span class="s1">pokemon = pokedex[escolha - </span><span class="s3">1</span><span class="s1">]</span>
+            <span class="s1">adicionarPokemon(nickname</span><span class="s4">, </span><span class="s1">pokemon.nome</span><span class="s4">, </span><span class="s1">pokemon.tipo</span><span class="s4">, </span><span class="s1">pokemon.poder)</span>
+            <span class="s1">escolhidos.add(escolha)</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

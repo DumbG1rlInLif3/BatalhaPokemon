@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>exibirPokedex.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #ed864a;}
+.s1 { color: #ebebeb;}
+.s2 { color: #7ec3e6;}
+.s3 { color: #54b33e;}
+.s4 { color: #ed864a; font-weight: bold;}
+.s5 { color: #33ccff; font-weight: bold;}
+</style>
+</head>
+<body bgcolor="#131314">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+exibirPokedex.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">fun </span><span class="s1">exibirPokedex() {</span>
+    <span class="s2">//📌 Essa função mostra todos os Pokémons disponíveis para os jogadores escolherem ao montar seus times.</span>
+
+    <span class="s1">println(</span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">📘 POKEDEX DISPONÍVEL:&quot;</span><span class="s1">)</span>
+    <span class="s2">//✅ Exibe um título com um emoji para dar mais estilo à interface.</span>
+
+    <span class="s1">pokedex.forEachIndexed { index</span><span class="s4">, </span><span class="s1">p -&gt;</span>
+        <span class="s1">println(</span><span class="s3">&quot;</span><span class="s0">${</span><span class="s1">index + </span><span class="s5">1</span><span class="s0">}</span><span class="s3">. </span><span class="s0">${</span><span class="s1">p.nome</span><span class="s0">} </span><span class="s3">| Tipo: </span><span class="s0">${</span><span class="s1">p.tipo</span><span class="s0">} </span><span class="s3">| Poder: </span><span class="s0">${</span><span class="s1">p.poder</span><span class="s0">}</span><span class="s3">&quot;</span><span class="s1">)</span>
+    <span class="s1">}</span>
+    <span class="s2">//✅ Usa forEachIndexed para exibir os Pokémons numerados a partir de 1 (usuário-friendly).</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>
